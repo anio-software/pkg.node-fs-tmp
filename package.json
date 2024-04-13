@@ -1,0 +1,25 @@
+{
+  "name": "@anio-fs/tmp",
+  "version": "1.0.0",
+  "description": "Create a temporary directory or file.",
+  "main": "./dist/package.min.mjs",
+  "typings": "./dist/index.d.ts",
+  "author": "Anio Software <info@anio.software>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anio-fs-org/tmp.git"
+  },
+  "devDependencies": {
+    "@anio-fs/int--tmp-dir": "^1.0.0",
+    "@anio-fs/int--tmp-file": "^1.0.0",
+    "@vipen/target-js": "0.17.0",
+    "vipen": "0.2.1"
+  },
+  "scripts": {
+    "prepare": "./node_modules/.bin/vipen ."
+  },
+  "files": [
+    "./dist/"
+  ]
+}
