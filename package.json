@@ -1,6 +1,6 @@
 {
   "name": "@anio-fs/tmp",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "Create a temporary directory or file.",
   "main": "./dist/package.min.mjs",
   "typings": "./dist/index.d.ts",
