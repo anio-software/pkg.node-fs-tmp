@@ -12,7 +12,7 @@
   },
   "devDependencies": {
     "@anio-fs/int--tmp-dir": "^2.0.0",
-    "@anio-fs/int--tmp-file": "^1.0.0",
+    "@anio-fs/int--tmp-file": "^2.0.0",
     "@fourtune/realm-js": "^0.1.0",
     "fourtune": "^0.0.1"
   },
