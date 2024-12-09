@@ -18,7 +18,5 @@
   },
   "files": [
     "./dist/"
-  ],
-  "main": "./dist/package.min.mjs",
-  "typings": "./dist/index.d.ts"
+  ]
 }
