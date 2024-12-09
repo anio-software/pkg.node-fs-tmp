@@ -1,12 +1,12 @@
 {
-  "name": "@anio-fs/tmp",
+  "name": "@aniojs/node-fs-tmp",
   "version": "0.0.0",
   "author": "Anio Software <info@anio.software>",
   "description": "Create a temporary directory or file.",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/anio-fs-org/tmp.git"
+    "url": "git+https://github.com/aniojs-org/node-fs-tmp.git"
   },
   "type": "module",
   "devDependencies": {

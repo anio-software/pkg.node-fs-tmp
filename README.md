@@ -1,9 +1,9 @@
-# @anio-fs/tmp
+# @aniojs/node-fs-tmp
 
 Create a temporary directory or file.
 
 ```js
-import {tmpfile, tmpfileSync, tmpdir, tmpdirSync} from "@anio-fs/tmp"
+import {tmpfile, tmpfileSync, tmpdir, tmpdirSync} from "@aniojs/node-fs-tmp"
 
 console.log(await tmpfile())
 console.log(tmpfileSync())
