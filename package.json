@@ -11,8 +11,9 @@
     "url": "git+https://github.com/anio-fs-org/tmp.git"
   },
   "devDependencies": {
-    "@fourtune/realm-js": "^0.1.0",
-    "fourtune": "^0.0.1"
+    "@fourtune/core": "^0.1101.0",
+    "@fourtune/realm-js": "^0.31000.2",
+    "fourtune": "^0.30000.0"
   },
   "scripts": {
     "prepare": "./node_modules/.bin/fourtune ."
