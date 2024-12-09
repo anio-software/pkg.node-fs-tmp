@@ -3,8 +3,8 @@ import type {RuntimeWrappedContextInstance} from "@fourtune/realm-js/runtime"
 import {getProject} from "@fourtune/realm-js/v0/project"
 
 declare function tmpfileSync(
-	file_extension: string,
-	tmp_dir: string
+	file_extension?: string,
+	tmp_dir?: string
 ) : string
 
 /**
@@ -31,7 +31,7 @@ export function tmpfileSyncFactory(context: RuntimeWrappedContextInstance) : typ
 		}
 	}
 
-	return function tmpfileSync(file_extension: string, tmp_dir: string) : string {
+	return function tmpfileSync(file_extension?: string, tmp_dir?: string) : string {
 		return implementation(local_context, file_extension, tmp_dir)
 	}
 }

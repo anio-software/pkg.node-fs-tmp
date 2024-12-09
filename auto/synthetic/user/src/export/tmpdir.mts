@@ -8,6 +8,6 @@ import {tmpdirFactory as factory} from "#~synthetic/user/export/tmpdirFactory.mt
 
 const fn = factory(createContext())
 
-export async function tmpdir(tmp_dir: string) : Promise<string> {
+export async function tmpdir(tmp_dir?: string) : Promise<string> {
 	return await fn(tmp_dir)
 }

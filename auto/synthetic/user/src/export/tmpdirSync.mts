@@ -4,6 +4,6 @@ import {tmpdirSyncFactory as factory} from "#~synthetic/user/export/tmpdirSyncFa
 
 const fn = factory(createContext())
 
-export function tmpdirSync(tmp_dir: string) : string {
+export function tmpdirSync(tmp_dir?: string) : string {
 	return fn(tmp_dir)
 }

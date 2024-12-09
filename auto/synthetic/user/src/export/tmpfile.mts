@@ -8,6 +8,6 @@ import {tmpfileFactory as factory} from "#~synthetic/user/export/tmpfileFactory.
 
 const fn = factory(createContext())
 
-export async function tmpfile(file_extension: string, tmp_dir: string) : Promise<string> {
+export async function tmpfile(file_extension?: string, tmp_dir?: string) : Promise<string> {
 	return await fn(file_extension, tmp_dir)
 }

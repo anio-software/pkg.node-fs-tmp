@@ -3,7 +3,7 @@ import type {RuntimeWrappedContextInstance} from "@fourtune/realm-js/runtime"
 import {getProject} from "@fourtune/realm-js/v0/project"
 
 declare function tmpdirSync(
-	tmp_dir: string
+	tmp_dir?: string
 ) : string
 
 /**
@@ -30,7 +30,7 @@ export function tmpdirSyncFactory(context: RuntimeWrappedContextInstance) : type
 		}
 	}
 
-	return function tmpdirSync(tmp_dir: string) : string {
+	return function tmpdirSync(tmp_dir?: string) : string {
 		return implementation(local_context, tmp_dir)
 	}
 }

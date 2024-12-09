@@ -7,7 +7,7 @@ import {getProject} from "@fourtune/realm-js/v0/project"
 // ^^^--- types needed for implementation
 
 declare function tmpdir(
-	tmp_dir: string
+	tmp_dir?: string
 ) : Promise<string>
 
 /**
@@ -34,7 +34,7 @@ export function tmpdirFactory(context: RuntimeWrappedContextInstance) : typeof t
 		}
 	}
 
-	return async function tmpdir(tmp_dir: string) : Promise<string> {
+	return async function tmpdir(tmp_dir?: string) : Promise<string> {
 		return await implementation(local_context, tmp_dir)
 	}
 }

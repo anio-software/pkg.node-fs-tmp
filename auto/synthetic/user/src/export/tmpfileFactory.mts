@@ -7,8 +7,8 @@ import {getProject} from "@fourtune/realm-js/v0/project"
 // ^^^--- types needed for implementation
 
 declare function tmpfile(
-	file_extension: string,
-	tmp_dir: string
+	file_extension?: string,
+	tmp_dir?: string
 ) : Promise<string>
 
 /**
@@ -35,7 +35,7 @@ export function tmpfileFactory(context: RuntimeWrappedContextInstance) : typeof 
 		}
 	}
 
-	return async function tmpfile(file_extension: string, tmp_dir: string) : Promise<string> {
+	return async function tmpfile(file_extension?: string, tmp_dir?: string) : Promise<string> {
 		return await implementation(local_context, file_extension, tmp_dir)
 	}
 }
