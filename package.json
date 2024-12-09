@@ -1,10 +1,8 @@
 {
   "name": "@anio-fs/tmp",
   "version": "2.0.0",
-  "description": "Create a temporary directory or file.",
-  "main": "./dist/package.min.mjs",
-  "typings": "./dist/index.d.ts",
   "author": "Anio Software <info@anio.software>",
+  "description": "Create a temporary directory or file.",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -20,5 +18,7 @@
   },
   "files": [
     "./dist/"
-  ]
+  ],
+  "main": "./dist/package.min.mjs",
+  "typings": "./dist/index.d.ts"
 }
