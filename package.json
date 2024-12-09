@@ -1,6 +1,6 @@
 {
   "name": "@anio-fs/tmp",
-  "version": "2.0.0",
+  "version": "0.0.0",
   "author": "Anio Software <info@anio.software>",
   "description": "Create a temporary directory or file.",
   "license": "MIT",
