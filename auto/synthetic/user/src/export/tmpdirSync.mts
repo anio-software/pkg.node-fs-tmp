@@ -2,8 +2,10 @@ import {createContext} from "@fourtune/realm-js/v0/runtime"
 
 import {tmpdirSyncFactory as factory} from "#~synthetic/user/export/tmpdirSyncFactory.mts"
 
-const fn = factory(createContext())
+let __fnImplementation: any = null
 
 export function tmpdirSync(tmp_dir?: string) : string {
-	return fn(tmp_dir)
+	if (__fnImplementation === null) __fnImplementation = factory(createContext());
+
+	return __fnImplementation(tmp_dir)
 }

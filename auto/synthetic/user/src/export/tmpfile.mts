@@ -6,8 +6,10 @@ import {createContext} from "@fourtune/realm-js/v0/runtime"
 
 import {tmpfileFactory as factory} from "#~synthetic/user/export/tmpfileFactory.mts"
 
-const fn = factory(createContext())
+let __fnImplementation: any = null
 
 export async function tmpfile(file_extension?: string, tmp_dir?: string) : Promise<string> {
-	return await fn(file_extension, tmp_dir)
+	if (__fnImplementation === null) __fnImplementation = factory(createContext());
+
+	return await __fnImplementation(file_extension, tmp_dir)
 }

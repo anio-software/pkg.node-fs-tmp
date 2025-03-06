@@ -6,8 +6,10 @@ import {createContext} from "@fourtune/realm-js/v0/runtime"
 
 import {tmpdirFactory as factory} from "#~synthetic/user/export/tmpdirFactory.mts"
 
-const fn = factory(createContext())
+let __fnImplementation: any = null
 
 export async function tmpdir(tmp_dir?: string) : Promise<string> {
-	return await fn(tmp_dir)
+	if (__fnImplementation === null) __fnImplementation = factory(createContext());
+
+	return await __fnImplementation(tmp_dir)
 }
