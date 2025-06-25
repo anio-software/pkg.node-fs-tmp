@@ -37,7 +37,7 @@ export async function __implementation(
 
 	const context = createContext(contextOptions, 0)
 
-	context.log.trace(`using temporary directory '${tmpDir}' and mode '${fileMode}'`)
+	context.log.trace(`using temporary directory '${tmpDir}' and mode '${fileMode.toString(8)}'`)
 
 	const rand = randomUUID({disableEntropyCache: true})
 	const dirPath = path.join(tmpDir, rand)
