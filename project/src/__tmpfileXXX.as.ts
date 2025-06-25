@@ -11,16 +11,12 @@ import {randomUUID} from "node:crypto"
 import path from "node:path"
 import os from "node:os"
 
-import type {CommonOptions} from "#~export/CommonOptions.ts"
-
-type Options = CommonOptions & {
-	fileExtension?: string
-}
+import type {TemporaryFileOptions} from "#~export/TemporaryFileOptions.ts"
 
 export async function __implementation(
 //>export function __implementationSync(
 	contextOptions: EnkoreJSRuntimeContextOptions,
-	options?: Options|undefined
+	options?: TemporaryFileOptions|undefined
 ) : Promise<string> {
 //>) : string {
 	const tmpDir: string = isString(options?.tmpDir) ? options.tmpDir : os.tmpdir()

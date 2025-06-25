@@ -6,7 +6,7 @@ import {
 import {mkdir} from "@anio-software/pkg-private.node-consistent-fs/async"
 //>import {mkdir} from "@anio-software/pkg-private.node-consistent-fs/sync"
 
-import type {CommonOptions} from "#~export/CommonOptions.ts"
+import type {TemporaryDirectoryOptions} from "#~export/TemporaryDirectoryOptions.ts"
 
 import {isString, isNumber} from "@anio-software/pkg.is"
 import {randomUUID} from "node:crypto"
@@ -16,7 +16,7 @@ import os from "node:os"
 export async function __implementation(
 //>export function __implementationSync(
 	contextOptions: EnkoreJSRuntimeContextOptions,
-	options?: CommonOptions|undefined
+	options?: TemporaryDirectoryOptions|undefined
 ) : Promise<string> {
 //>) : string {
 	const tmpDir: string = isString(options?.tmpDir) ? options.tmpDir : os.tmpdir()
