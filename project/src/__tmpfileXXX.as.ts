@@ -23,7 +23,7 @@ export async function __implementation(
 		tmpDir = os.tmpdir()
 	}
 
-	context.log.trace(`using tmpDir '${tmpDir}'`)
+	context.log.trace(`using temporary directory '${tmpDir}'`)
 
 	if (fileExtension === undefined) {
 		fileExtension = ""

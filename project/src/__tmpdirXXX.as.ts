@@ -22,7 +22,7 @@ export async function __implementation(
 		tmpDir = os.tmpdir()
 	}
 
-	context.log.trace(`using tmpDir '${tmpDir}'`)
+	context.log.trace(`using temporary directory '${tmpDir}'`)
 
 	const rand = randomUUID({disableEntropyCache: true})
 	const dirPath = path.join(tmpDir, rand)
