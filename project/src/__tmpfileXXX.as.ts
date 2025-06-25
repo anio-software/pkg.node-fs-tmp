@@ -1,4 +1,7 @@
-import {useContext, type RuntimeWrappedContextInstance} from "@fourtune/realm-js/runtime"
+import {
+	type EnkoreJSRuntimeContextOptions,
+	createContext
+} from "@anio-software/enkore.js-runtime"
 
 import {openFile} from "@aniojs-private/node-async-sync-fs/async"
 //>import {openFile} from "@aniojs-private/node-async-sync-fs/sync"
@@ -9,12 +12,12 @@ import os from "node:os"
 
 export async function implementation(
 //>export function implementation(
-	wrapped_context: RuntimeWrappedContextInstance,
+	wrapped_context: EnkoreJSRuntimeContextOptions,
 	file_extension?: string,
 	tmp_dir?: string
 ) : Promise<string> {
 //>) : string {
-	const context = useContext(wrapped_context, 0)
+	const context = createContext(wrapped_context, 0)
 
 	if (tmp_dir === undefined) {
 		tmp_dir = os.tmpdir()
