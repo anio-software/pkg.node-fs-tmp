@@ -4,3 +4,11 @@
 /src/tmpdirSync.ts
 /src/tmpfile.ts
 /src/tmpfileSync.ts
+/export/tmpfileFactory.ts
+/export/tmpfile.ts
+/export/tmpfileSyncFactory.ts
+/export/tmpfileSync.ts
+/export/tmpdirFactory.ts
+/export/tmpdir.ts
+/export/tmpdirSyncFactory.ts
+/export/tmpdirSync.ts
