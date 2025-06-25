@@ -10,8 +10,8 @@ import {randomUUID} from "node:crypto"
 import path from "node:path"
 import os from "node:os"
 
-export async function implementation(
-//>export function implementation(
+export async function __implementation(
+//>export function __implementationSync(
 	wrapped_context: EnkoreJSRuntimeContextOptions,
 	file_extension?: string,
 	tmp_dir?: string
