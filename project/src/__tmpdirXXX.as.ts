@@ -12,11 +12,11 @@ import os from "node:os"
 
 export async function __implementation(
 //>export function __implementationSync(
-	wrapped_context: EnkoreJSRuntimeContextOptions,
+	contextOptions: EnkoreJSRuntimeContextOptions,
 	tmp_dir?: string
 ) : Promise<string> {
 //>) : string {
-	const context = createContext(wrapped_context, 0)
+	const context = createContext(contextOptions, 0)
 
 	if (tmp_dir === undefined) {
 		tmp_dir = os.tmpdir()
