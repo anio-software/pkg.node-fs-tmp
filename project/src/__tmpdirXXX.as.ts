@@ -19,10 +19,9 @@ export async function __implementation(
 	options?: TemporaryDirectoryOptions|undefined
 ) : Promise<string> {
 //>) : string {
+	const context = createContext(contextOptions, 0)
 	const tmpDir: string = isString(options?.tmpDir) ? options.tmpDir : os.tmpdir()
 	const fileMode: number = isNumber(options?.mode) ? options.mode : 0o755
-
-	const context = createContext(contextOptions, 0)
 
 	context.log.trace(`using temporary directory '${tmpDir}' and mode '${fileMode.toString(8)}'`)
 
