@@ -13,22 +13,22 @@ import os from "node:os"
 export async function __implementation(
 //>export function __implementationSync(
 	contextOptions: EnkoreJSRuntimeContextOptions,
-	tmp_dir?: string
+	tmpDir?: string
 ) : Promise<string> {
 //>) : string {
 	const context = createContext(contextOptions, 0)
 
-	if (tmp_dir === undefined) {
-		tmp_dir = os.tmpdir()
+	if (tmpDir === undefined) {
+		tmpDir = os.tmpdir()
 	}
 
-	context.log.trace(`using tmp_dir '${tmp_dir}'`)
+	context.log.trace(`using tmpDir '${tmpDir}'`)
 
 	const rand = randomUUID({disableEntropyCache: true})
-	const dir_path = path.join(tmp_dir, rand)
+	const dirPath = path.join(tmpDir, rand)
 
-	await mkdir(dir_path, {mode: 0o755})
-//>	mkdir(dir_path, {mode: 0o755})
+	await mkdir(dirPath, {mode: 0o755})
+//>	mkdir(dirPath, {mode: 0o755})
 
-	return dir_path
+	return dirPath
 }

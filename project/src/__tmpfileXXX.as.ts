@@ -13,30 +13,30 @@ import os from "node:os"
 export async function __implementation(
 //>export function __implementationSync(
 	contextOptions: EnkoreJSRuntimeContextOptions,
-	file_extension?: string,
-	tmp_dir?: string
+	fileExtension?: string,
+	tmpDir?: string
 ) : Promise<string> {
 //>) : string {
 	const context = createContext(contextOptions, 0)
 
-	if (tmp_dir === undefined) {
-		tmp_dir = os.tmpdir()
+	if (tmpDir === undefined) {
+		tmpDir = os.tmpdir()
 	}
 
-	context.log.trace(`using tmp_dir '${tmp_dir}'`)
+	context.log.trace(`using tmpDir '${tmpDir}'`)
 
-	if (file_extension === undefined) {
-		file_extension = ""
+	if (fileExtension === undefined) {
+		fileExtension = ""
 	}
 
 	const rand = randomUUID({disableEntropyCache: true})
-	const file_path = path.join(tmp_dir, rand + file_extension)
+	const filePath = path.join(tmpDir, rand + fileExtension)
 
-	const file = await openFile(file_path, "wx", 0o744)
-//>	const file = openFile(file_path, "wx", 0o744)
+	const file = await openFile(filePath, "wx", 0o744)
+//>	const file = openFile(filePath, "wx", 0o744)
 
 	await file.close()
 //>	file.close()
 
-	return file_path
+	return filePath
 }
