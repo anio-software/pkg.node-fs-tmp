@@ -19,21 +19,8 @@ export async function __implementation(
 	options?: CommonOptions|undefined
 ) : Promise<string> {
 //>) : string {
-	const tmpDir: string = (() => {
-		if (isString(options?.tmpDir)) {
-			return options.tmpDir
-		}
-
-		return os.tmpdir()
-	})()
-
-	const fileMode: number = (() => {
-		if (isNumber(options?.mode)) {
-			return options.mode
-		}
-
-		return 0o755
-	})()
+	const tmpDir: string = isString(options?.tmpDir) ? options.tmpDir : os.tmpdir()
+	const fileMode: number = isNumber(options?.mode) ? options.mode : 0o755
 
 	const context = createContext(contextOptions, 0)
 
