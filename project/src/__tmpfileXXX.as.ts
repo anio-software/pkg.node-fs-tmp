@@ -6,34 +6,56 @@ import {
 import {openFile} from "@anio-software/pkg-private.node-consistent-fs/async"
 //>import {openFile} from "@anio-software/pkg-private.node-consistent-fs/sync"
 
+import {isString, isNumber} from "@anio-software/pkg.is"
 import {randomUUID} from "node:crypto"
 import path from "node:path"
 import os from "node:os"
 
+import type {CommonOptions} from "#~export/CommonOptions.ts"
+
+type Options = CommonOptions & {
+	fileExtension?: string
+}
+
 export async function __implementation(
 //>export function __implementationSync(
 	contextOptions: EnkoreJSRuntimeContextOptions,
-	fileExtension?: string,
-	tmpDir?: string
+	options?: Options|undefined
 ) : Promise<string> {
 //>) : string {
+	const tmpDir: string = (() => {
+		if (isString(options?.tmpDir)) {
+			return options.tmpDir
+		}
+
+		return os.tmpdir()
+	})()
+
+	const fileExtension: string = (() => {
+		if (isString(options?.fileExtension)) {
+			return options.fileExtension
+		}
+
+		return ""
+	})()
+
+	const fileMode: number = (() => {
+		if (isNumber(options?.mode)) {
+			return options.mode
+		}
+
+		return 0o744
+	})()
+
 	const context = createContext(contextOptions, 0)
 
-	if (tmpDir === undefined) {
-		tmpDir = os.tmpdir()
-	}
-
-	context.log.trace(`using temporary directory '${tmpDir}'`)
-
-	if (fileExtension === undefined) {
-		fileExtension = ""
-	}
+	context.log.trace(`using temporary directory '${tmpDir}' and mode '${fileMode}'`)
 
 	const rand = randomUUID({disableEntropyCache: true})
 	const filePath = path.join(tmpDir, rand + fileExtension)
 
-	const file = await openFile(filePath, "wx", 0o744)
-//>	const file = openFile(filePath, "wx", 0o744)
+	const file = await openFile(filePath, "wx", fileMode)
+//>	const file = openFile(filePath, "wx", fileMode)
 
 	await file.close()
 //>	file.close()
