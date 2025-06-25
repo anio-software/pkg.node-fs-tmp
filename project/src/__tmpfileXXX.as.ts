@@ -3,8 +3,8 @@ import {
 	createContext
 } from "@anio-software/enkore.js-runtime"
 
-import {openFile} from "@aniojs-private/node-async-sync-fs/async"
-//>import {openFile} from "@aniojs-private/node-async-sync-fs/sync"
+import {openFile} from "@anio-software/pkg-private.node-consistent-fs/async"
+//>import {openFile} from "@anio-software/pkg-private.node-consistent-fs/sync"
 
 import {randomUUID} from "node:crypto"
 import path from "node:path"
