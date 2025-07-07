@@ -1,9 +1,9 @@
 # This file is automatically managed by enkore
 # DO NOT ADD ENTRIES HERE, THEY WILL BE REMOVED
-/src/tmpdir.ts
-/src/tmpdirSync.ts
 /src/tmpfile.ts
 /src/tmpfileSync.ts
+/src/tmpdir.ts
+/src/tmpdirSync.ts
 /export/tmpfileFactory.ts
 /export/tmpfile.ts
 /export/tmpfileSyncFactory.ts
